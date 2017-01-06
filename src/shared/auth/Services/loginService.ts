@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-
-import {Http} from '@angular/http';// service provider for HttpModule
+import{Http} from '@angular/http'
+import { HttpProxy  } from '../../httpProxy/httpInterceptor/httpProxy';// service provider for HttpModule
 import 'rxjs/add/operator/toPromise'; //for returning promise from service request
 
 @Injectable()
 export class loginService{
-    constructor(private _http:Http){}
+    constructor(private _http:HttpProxy){}
     private _handleError(error:any):Promise<any>{
         console.log('An error occurred', error);
         return Promise.reject(error.message||error);
